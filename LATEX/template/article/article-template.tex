@@ -87,8 +87,8 @@ bindingoffset=0cm]{geometry}% Поля
 \usepackage{lipsum}% Филлерный текст
 
 %Для \maketitle
-\title{Название}
-\author{Попел Семен}
+\title{Шаблон Документа \LaTeX}
+\author{5ohue}
 
 %%%%%%%%%%%%% Начало документа %%%%%%%%%%%%%
 
@@ -98,20 +98,20 @@ bindingoffset=0cm]{geometry}% Поля
 
 \maketitle
 
-\begin{abstract}
-
-\end{abstract}
+\tableofcontents
 
 \section{Это шаблон документа \LaTeX}
 
 Просто какой-то текст.
 
-Нормальный эпсилон:
-\[ \epsilon \]
-
 Код латеха в тексте
 > \verb!\backslash multicolumn{7}{c}{Текст}!
 
+\begin{equation}
+  \epsilon
+\end{equation}
+
+\section{Липсум}
 \lipsum[1-15]
 
 \end{document}
