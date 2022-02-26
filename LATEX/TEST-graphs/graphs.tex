@@ -1,0 +1,112 @@
+\documentclass[a4paper,12pt]{article} % Размер бумаги устанавливаем А4, шрифт 14пунктов
+
+\usepackage[utf8]{inputenc}% Включаем свою кодировку: koi8-r или utf8 в UNIX, cp1251 в Windows
+\usepackage[english,russian]{babel}% Используем русский и английский языки с переносами
+
+\usepackage[left=2cm,
+	right=2cm,
+	top=2cm,
+	bottom=2cm,
+	bindingoffset=0cm]{geometry}% Поля
+
+\usepackage{amssymb, amsfonts, amsmath, mathtext}% Подключаем нужные пакеты расширений
+% amssymb - дополнительные символы
+% amsfonts - какие то дополнительные шрифты
+% amsmath - для пронумерованных формул
+% mathtext - для текста внутри формулы \text{}
+
+\usepackage{icomma}% "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+\usepackage{gnuplottex}% Gnuplot графики
+\usepackage{xcolor}% Для definecolor команд в gnuplot
+
+% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%%% Символы в формулах по российским стандартам
+\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
+\renewcommand{\phi}{\ensuremath{\varphi}}
+\renewcommand{\kappa}{\ensuremath{\varkappa}}
+\renewcommand{\le}{\ensuremath{\leqslant}}
+\renewcommand{\leq}{\ensuremath{\leqslant}}
+\renewcommand{\ge}{\ensuremath{\geqslant}}
+\renewcommand{\geq}{\ensuremath{\geqslant}}
+\renewcommand{\emptyset}{\varnothing}
+%%%%
+
+\usepackage{graphicx}% Картинки в тексте
+%\graphicspath{{images/}}%путь к рисункам
+%\makeatletter
+%\renewcommand{\@biblabel}[1]{#1.}% Заменяем библиографию с квадратных скобок на точку:
+%\makeatother
+
+%\usepackage{minted}% Для оформления кода
+
+
+\usepackage{geometry}% Меняем, если надо, поля страницы
+\usepackage{layout}
+\usepackage{hyperref}% Гиперссылки
+
+%\geometry{left=2cm}% левое поле
+%\geometry{right=1.5cm}% правое поле
+%\geometry{top=1cm}% верхнее поле
+%\geometry{bottom=2cm}% нижнее поле
+
+\usepackage{fancybox, fancyhdr}% Калоквиумы
+\usepackage{multicol}% \begin{multicols}{3} - текст в несколько колонк
+\usepackage{wrapfig}% Обтекание картинок
+
+%%%% Калоквиумы
+\pagestyle{fancy}
+\lhead{}
+\lfoot{}
+\cfoot{}
+\chead{--- \thepage\ ---}
+\rhead{}
+\renewcommand{\headrulewidth}{0pt}% Изменение толщины полосок
+%Для изменения толщины полоски снизу нужно \renewcommand{\footrulewidth}{...}
+%%%%
+
+%\textwidth=160mm
+%\textheight=240mm
+%\topmargin=-1cm
+
+\usepackage{lipsum}% Филлерный текст
+
+%Для \maketitle
+\title{Название}
+\author{Попел Семен}
+
+%%%%%%%%%%%%% Начало документа %%%%%%%%%%%%%
+
+\begin{document}
+	
+\thispagestyle{fancy}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Это шаблон документа \LaTeX}
+
+\begin{figure}[h]
+	\centering
+	\begin{gnuplot}[terminal=epslatex]
+		plot x**3 title 'Кубическая парабола $y = x^3$'
+	\end{gnuplot}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\begin{gnuplot}[terminal=epslatex]
+		set terminal epslatex color size 12cm,12cm
+		splot x**2 + y**3 with lines title '$z = x^2 + y^3$'
+	\end{gnuplot}
+	\caption{Трехмерный график сеткой}
+\end{figure}
+
+%\lipsum[1-7]% just dumps ten paragraphs of filler text
+\end{document}

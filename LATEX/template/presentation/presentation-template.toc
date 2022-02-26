@@ -1,0 +1,3 @@
+\babel@toc {russian}{}\relax 
+\beamer@sectionintoc {1}{Закуски}{2}{0}{1}
+\beamer@sectionintoc {2}{Основное блюдо}{3}{0}{2}

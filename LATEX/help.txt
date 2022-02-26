@@ -1,0 +1,4 @@
+Для компиляции документа лучше всего использовать команду pdflatex или же просто редактор TexStudio
+Комманда:
+>>> pdflatex -synctex=1 -interaction=nonstopmode -shell-escape %.tex
+
